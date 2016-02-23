@@ -1,0 +1,135 @@
+.EUc {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin:0 auto;
+  max-width:1367px;
+  overflow: hidden;
+  transform: translate3d(0,0,0);
+  padding: 10px;
+  z-index: 9001;
+  font-size: 16px;
+  /* https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/ */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", sans-serif;
+  box-sizing: border-box;
+}
+.EUc.dark {
+  background: #222;
+  color: #fff;
+}
+.EUc.light {
+  background: #FFF;
+  border-top:1px solid #EEE;
+  color: #222;
+}
+.EUc__message {
+  font-size: 0.6em;
+  display: block;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5em;
+  padding-top:0.2em;
+}
+.EUc__message a,
+.EUc__message a:visited {
+  cursor:pointer;
+  text-decoration: none;
+  color: #0091FF;
+}
+.EUc__message a:hover,
+.EUc__message a:active {
+  text-decoration: none;
+  color: #55c8ff;
+}
+.EUc .EUc__btn,
+.EUc .EUc__btn:visited {
+  text-align: center;
+  font-size: 0.6em;
+  line-height: 1em;
+  color: #fff;
+  background-color: #0091FF;
+  border-radius: 3px;
+  padding: 8px 10px;
+  display: block;
+  width: 33%;
+  margin-left: 10px;
+  float: right;
+  max-width: 150px;
+  text-decoration: none;
+  transition: background-color 200ms ease-in-out;
+}
+.EUc .EUc__btn:hover,
+.EUc .EUc__btn:active {
+  color: #fff;
+}
+/* Windows Metro style */
+.EUc--metro .EUc__btn,
+.EUc--metro .EUc__btn:visited {
+  border-radius: 0;
+}
+@media screen and (min-width: 500px) {
+  .EUc .EUc__btn {
+    font-size: 0.8em;
+  }
+  .EUc__message {
+    font-size: 0.8em;
+  }
+}
+@media print {
+  .EUc {
+    display: none;
+  }
+}
+/* Bootstrap's 'md' breakpoint */
+@media screen and (min-width: 768px) {
+  .EUc {
+    padding: 15px 30px 15px;
+  }
+  .EUc .EUc__btn {
+    font-size: 0.95em;
+    padding: 8px 15px;
+  }
+  .EUc__message {
+    font-size: 0.95em;
+    line-height: 1.20em;
+  }
+}
+/* Bootstrap's 'lg' breakpoint */
+@media screen and (min-width: 992px) {
+  .EUc__message {
+    font-size: 0.95em;
+  }
+}
+
+/* ------   Animations  --------- */
+.EUc.initialEffect,
+.EUc__message {
+  animation: slideUp 0.5s;
+  -webkit-animation: slideUp 0.5s;
+
+}
+.EUc.hideBar {
+  animation: slideUp 0.5s reverse forwards;
+  -webkit-animation: slideUp 0.5s reverse forwards;
+}
+@-webkit-keyframes slideUp {
+  0% {
+    -webkit-transform: translateY(66px);
+    transform: translateY(66px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes slideUp {
+  0% {
+    -webkit-transform: translateY(66px);
+    transform: translateY(66px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
