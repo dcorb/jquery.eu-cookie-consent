@@ -1,25 +1,27 @@
 # EU Cookie Consent #
-Use this tiny jQuery plugin to add a bottom bar to inform your visitors about your cookie policy.
+Use this tiny jQuery plugin to display a bottom bar to inform your visitors about your cookie policy.
 
 
 ## Features ##
-Tiny
-    JS 2KB minified
-    JS 1KB minified & gzipped
-    CSS 2KB minified
-    CSS 0.7KB minified & gzipped
-Accept on Scroll
-Accept on Any Click
-Responsive CSS
-Animated
-2 themes: dark / light
-Multiple ways to hook your custom JavaScript or initialize it.
-Easily add Geo localization 
+Tiny 
+- JS 2KB minified 
+- JS 1KB minified & gzipped 
+- CSS 2KB minified 
+- CSS 0.7KB minified & gzipped 
+Accept on Scroll 
+Accept on Any Click 
+Responsive CSS 
+Animated 
+2 themes: dark / light 
+Multiple ways to hook your custom JavaScript or initialize it. 
+Easily add Geo localization   
 
 ## localStorage ##
-This plugin uses `localStorage` and because of not using cookies, it fits better for high-traffic websites with caching systems like Varnish.
-But <strong> you won't be able to detect from the server</strong> if the user accepted or not the cookies usage.
-A nice extra feature is that if user consent the usage cookies in one browser tab, the message will be hidden in other already opened tabs.
+This is a pure JavaScript solution.
+This plugin uses `localStorage` and because of not using cookies, it fits better for high anonymous traffic websites with caching systems like Varnish.  
+
+<strong> you won't be able to detect from the server</strong> if the user accepted or not the cookies usage.
+A nice extra feature is that if user consent the usage of cookies in one browser tab, the message will be hidden in other already opened tabs.
 
 
 ## Installation ##
@@ -32,21 +34,21 @@ A nice extra feature is that if user consent the usage cookies in one browser ta
 ```
 
 ## Usage ##
-See, that we call `init()` method. This gives you a better control. See Full example at the bottom.
+See the `init()` method. This gives you a better control of the plugin. See the Full example at the bottom.
 ```
 ...
 $.EUCookie({
 'acceptBtn' : 
     'acceptBtn': 'Ok!',
-    'message': 'We use cookies to give you the best personalised experience. Check {{ link_1 }} to find out more.'
+    'message': 'We use cookies. Check {{ link_1 }} to find out more.'
     'links' {
         'link_1' : '/cookie-policy' // relative or Absolute URL
         'link_1_text' : 'our cookie policy'
     }
-}).init();
+}).init(); // <-- Needed
 ...
 ```
-This is not a traditional jQuery plugin. Don't use it as `<stroke>jQuery('selector').EUCookie.</stroke>`
+This is not a traditional jQuery plugin. Don't use it as <strike>jQuery('selector').EUCookie()</strike>
 
 ## Options ##
 
@@ -81,9 +83,8 @@ You can use HTML and placeholders `{{link_1}}` and `{{link_2}}` to be replaced w
 
 ```
 ...
-// Save it in a variable, so later we call it with .init()
+// Save the instance in a variable, so later we decide if we need to initialize it
 var $EUCookie = $.EUCookie({
-'acceptBtn' : 
     'acceptBtn': 'Ok!',
     'message': 'We use cookies to give you the best personalised experience. Check {{ link_1 }} and {{ link_2 }} _to find out more.'
     'links' {
@@ -98,8 +99,8 @@ var $EUCookie = $.EUCookie({
     'hideOnScroll': true,
     'scrollDelay': 4000,
     'beforeShowFn': function($el){
-       // Notice, the first argument is the the element, wrapped as a jQuery object.
-       $el.addClass('EUc--metro'); // a Windows metro style
+       // Notice, the first argument is the element, wrapped as a jQuery object.
+       $el.addClass('EUc--metro'); // gives a Windows metro style button
        
        // return true to show the message. Otherwise
        return true;
@@ -114,7 +115,7 @@ var $EUCookie = $.EUCookie({
 });
 
 // Check if user is in EU (users who are actually subject to the cookie law)
-// Other free services: commando.io, freegeoip, maxmind geocity lite, ip2location, eurekAPI, DB-IP, ip-api.com, ipinfo.io, 
+// Other free services: commando.io, maxmind geocity lite, ip2location, eurekAPI, DB-IP, ip-api.com, ipinfo.io, 
 // Check their terms and conditions, before using a Geo location service. 
 $.get("http://freegeoip.net/json/", function (response) {
     var EU_COUNTRY_CODES = ['AT', 'BE', 'BG', 'CY', 'CZ', 'DE', 'DK', 'EE', 'GR', 'ES', 'FI', 'FR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'RO', 'SK', 'SL', 'SE', 'SI', 'GB'];
@@ -130,7 +131,6 @@ $.get("http://freegeoip.net/json/", function (response) {
 // --------------------------
 
 // $EUCookie.remove();  // hides the message 
-
 // $EUCookie.destroy(); // hides the message and deletes the persistent localStorage key
 
 ...
