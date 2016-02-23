@@ -3,24 +3,25 @@ Use this tiny jQuery plugin to display a bottom bar to inform your visitors abou
 
 
 ## Features ##
-Tiny 
-- JS 2KB minified 
-- JS 1KB minified & gzipped 
-- CSS 2KB minified 
-- CSS 0.7KB minified & gzipped 
-Accept on Scroll 
-Accept on Any Click 
-Responsive CSS 
-Animated 
-2 themes: dark / light 
-Multiple ways to hook your custom JavaScript or initialize it. 
-Easily add Geo localization   
+Tiny  
+- JS 2KB minified  
+- JS 1KB minified & gzipped  
+- CSS 2KB minified  
+- CSS 0.7KB minified & gzipped   
+
+Accept on Scroll  
+Accept on Any Click  
+Responsive CSS  
+Animated  
+2 themes: dark / light  
+Multiple ways to hook your custom JavaScript or initialize it.  
+Easily add Geo localization    
 
 ## localStorage ##
 This is a pure JavaScript solution.
 This plugin uses `localStorage` and because of not using cookies, it fits better for high anonymous traffic websites with caching systems like Varnish.  
 
-<strong> you won't be able to detect from the server</strong> if the user accepted or not the cookies usage.
+<strong>You won't be able to detect from the server</strong> if the user accepted or not the cookies usage.  
 A nice extra feature is that if user consent the usage of cookies in one browser tab, the message will be hidden in other already opened tabs.
 
 
