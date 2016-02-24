@@ -1,7 +1,7 @@
 # EU Cookie Consent #
 Use this tiny jQuery plugin to display a bottom bar to inform your visitors about your cookie policy.
 
-Developed by [Electric Word PLC](http://www.electricwordplc.com). You can see it in action in the [blog](http://www.electricwordplc.com).
+Developed by [Electric Word PLC](http://www.electricwordplc.com). You can see it in action in the [blog](http://blog.optimus-education.com/).
  
 ## Features ##
 Tiny  
