@@ -40,14 +40,13 @@ See the `init()` method. This gives you a better control of the plugin. See the 
 ```
 ...
 $.EUCookie({
-'acceptBtn' : 
-    'acceptBtn': 'Ok!',
-    'message': 'We use cookies. Check {{ link_1 }} to find out more.'
-    'links' {
-        'link_1' : '/cookie-policy' // relative or Absolute URL
-        'link_1_text' : 'our cookie policy'
+    'acceptBtn' : 'Ok!',
+    'message': 'We use cookies. Check {{ link_1 }} to find out more.',
+    'links' : {
+      'link_1' : '/cookie-policy',
+      'link_1_text' : 'our cookie policy'
     }
-}).init(); // <-- Needed
+  }).init();
 ...
 ```
 This is not a traditional jQuery plugin. Don't use it as <strike>jQuery('selector').EUCookie()</strike>
